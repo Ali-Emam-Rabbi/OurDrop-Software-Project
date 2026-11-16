@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>OurDrop</title>
+<style>
+  @font-face { font-family: "General Sans"; src: url("./fonts/GeneralSans-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; } @font-face { font-family: "General Sans"; src: url("./fonts/GeneralSans-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+  html, body { margin: 0; height: 100%; background: #03122e; overflow: hidden; font-family: "General Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  .wrap { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: radial-gradient(120% 100% at 50% 0%, #0a3d91 0%, #06275e 45%, #03122e 100%); animation: fadeOut .3s ease 1.78s both; }
+  .logo { width: 148px; height: 148px; border-radius: 32px; box-shadow: 0 0 64px rgba(56,189,248,.45);
+    animation: in .65s cubic-bezier(.2,.9,.25,1.15) .3s both, glow .55s ease 1.45s; }
+  .name { margin-top: 22px; font-size: 30px; font-weight: 800; letter-spacing: .14em; color: #fff; animation: up .5s ease .9s both; }
+  .sub { margin-top: 6px; font-size: 13px; color: #9fc2f5; animation: up .5s ease 1.05s both; }
+  .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; overflow: hidden; opacity: .55; pointer-events: none; }
+  .waves span { position: absolute; left: 0; bottom: -6px; width: 200%; height: 100%; background-repeat: repeat-x; background-size: 50% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='80' viewBox='0 0 720 80' preserveAspectRatio='none'%3E%3Cpath d='M0 45 Q 90 15 180 45 T 360 45 T 540 45 T 720 45 V80 H0 Z' fill='%2338bdf8' fill-opacity='0.22'/%3E%3C/svg%3E");
+    animation: slide 9s linear infinite; }
+  .waves .w2 { animation-duration: 14s; animation-direction: reverse; opacity: .65; bottom: -16px; }
+  @keyframes in { from { opacity: 0; transform: scale(.82) translateY(22px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  @keyframes up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes glow { 0% { box-shadow: 0 0 40px rgba(56,189,248,.35); } 50% { box-shadow: 0 0 100px rgba(56,189,248,.8); } 100% { box-shadow: 0 0 64px rgba(56,189,248,.45); } }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fadeOut { to { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="./logo.png" alt="OurDrop" />
+    <div class="name">OURDROP</div>
+    <div class="sub">PC ⇄ Mobile File Sharing</div>
+    <div class="waves"><span></span><span class="w2"></span></div>
+  </div>
+</body>
+</html>

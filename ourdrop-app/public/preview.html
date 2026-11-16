@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OurDrop — Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @font-face { font-family: "General Sans"; src: url("/fonts/GeneralSans-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; } @font-face { font-family: "General Sans"; src: url("/fonts/GeneralSans-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+  html, body { height: 100%; background: #050b16; color: #e6eefc; font-family: "General Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #0a1730; border-bottom: 1px solid rgba(120,170,255,.16); }
+  .name { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pos { font-size: 12px; color: #8fb0dd; margin-right: 4px; }
+  button { background: rgba(56,130,246,.16); color: #dbeafe; border: 1px solid rgba(120,170,255,.25); border-radius: 9px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+  button:hover { background: rgba(56,130,246,.3); }
+  button:disabled { opacity: .35; cursor: default; }
+  .stage { position: absolute; inset: 49px 0 0 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .stage img { max-width: 100%; max-height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+  .stage video { width: 100%; height: 100%; max-height: 100%; background: #000; }
+  .fallback { display: none; text-align: center; padding: 24px; }
+  .fallback p { color: #9db8dd; margin-bottom: 14px; font-size: 14px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span class="pos" id="pos"></span>
+    <span class="name" id="name">Preview</span>
+    <span id="imgTools">
+      <button id="prevBtn" title="Previous image">‹ Prev</button>
+      <button id="nextBtn" title="Next image">Next ›</button>
+      <button id="zoomOut" title="Zoom out">−</button>
+      <button id="zoomFit" title="Fit to screen">Fit</button>
+      <button id="zoomIn" title="Zoom in">+</button>
+    </span>
+    <button id="openDefault">Open in default app</button>
+  </div>
+  <div class="stage" id="stage">
+    <img id="img" alt="" />
+    <video id="vid" controls autoplay style="display:none"></video>
+    <div class="fallback" id="fallback">
+      <p id="fallbackText">This file can't be previewed here.</p>
+      <button id="fallbackBtn">Open in default app</button>
+    </div>
+  </div>
+<script>
+  const $ = (id) => document.getElementById(id);
+  const toFileUrl = (p) => "file:///" + p.replace(/\\/g, "/").split("/").map((seg, i) => (i === 0 && /^[A-Za-z]:$/.test(seg)) ? seg : encodeURIComponent(seg)).join("/").replace(/^file:\/\/\/\//, "file:///");
+  let data = null, idx = 0, zoom = 1, panX = 0, panY = 0, drag = null;
+
+  function applyZoom() {
+    const img = $("img");
+    img.style.transform = zoom === 1 ? "" : `translate(${panX}px, ${panY}px) scale(${zoom})`;
+    img.style.cursor = zoom > 1 ? "grab" : "default";
+  }
+  function setImage(i) {
+    if (!data || !data.images || !data.images.length) return;
+    idx = (i + data.images.length) % data.images.length;
+    const fp = data.images[idx];
+    $("img").src = toFileUrl(fp);
+    $("name").textContent = fp.split(/[\\/]/).pop();
+    $("pos").textContent = data.images.length > 1 ? (idx + 1) + " / " + data.images.length : "";
+    $("prevBtn").disabled = $("nextBtn").disabled = data.images.length <= 1;
+    zoom = 1; panX = 0; panY = 0; applyZoom();
+    data.file = fp;
+  }
+  $("prevBtn").onclick = () => setImage(idx - 1);
+  $("nextBtn").onclick = () => setImage(idx + 1);
+  $("zoomIn").onclick = () => { zoom = Math.min(6, zoom * 1.3); applyZoom(); };
+  $("zoomOut").onclick = () => { zoom = Math.max(1, zoom / 1.3); if (zoom === 1) { panX = 0; panY = 0; } applyZoom(); };
+  $("zoomFit").onclick = () => { zoom = 1; panX = 0; panY = 0; applyZoom(); };
+  $("img").addEventListener("wheel", (e) => { e.preventDefault(); zoom = Math.max(1, Math.min(6, zoom * (e.deltaY < 0 ? 1.12 : 0.89))); if (zoom === 1) { panX = 0; panY = 0; } applyZoom(); }, { passive: false });
+  $("img").addEventListener("pointerdown", (e) => { if (zoom > 1) { drag = { x: e.clientX - panX, y: e.clientY - panY }; $("img").setPointerCapture(e.pointerId); } });
+  $("img").addEventListener("pointermove", (e) => { if (drag) { panX = e.clientX - drag.x; panY = e.clientY - drag.y; applyZoom(); } });
+  $("img").addEventListener("pointerup", () => { drag = null; });
+  document.addEventListener("keydown", (e) => {
+    if (!data || data.kind !== "image") return;
+    if (e.key === "ArrowLeft") setImage(idx - 1);
+    if (e.key === "ArrowRight") setImage(idx + 1);
+  });
+  const openDef = () => { if (data) window.odPreview.openDefault(data.file); };
+  $("openDefault").onclick = openDef;
+  $("fallbackBtn").onclick = openDef;
+
+  (async () => {
+    data = await window.odPreview.getData();
+    if (!data) { $("name").textContent = "Nothing to preview"; return; }
+    document.title = "OurDrop — " + data.name;
+    if (data.kind === "image") {
+      $("vid").remove();
+      setImage(data.index || 0);
+    } else if (data.kind === "video") {
+      $("img").remove();
+      $("imgTools").style.display = "none";
+      const vid = $("vid");
+      vid.style.display = "block";
+      vid.src = toFileUrl(data.file);
+      $("name").textContent = data.name;
+      vid.addEventListener("error", () => {
+        vid.style.display = "none";
+        $("fallbackText").textContent = "This video format can't be played in the built-in player (common for MKV files recorded with certain codecs). You can open it in your default video player instead.";
+        $("fallback").style.display = "block";
+      }, true);
+    } else {
+      $("img").remove(); $("vid").remove(); $("imgTools").style.display = "none";
+      $("name").textContent = data.name;
+      $("fallbackText").textContent = "No built-in preview for this file type.";
+      $("fallback").style.display = "block";
+    }
+  })();
+</script>
+</body>
+</html>

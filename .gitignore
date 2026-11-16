@@ -1,0 +1,33 @@
+# Dependencies & build output
+node_modules/
+dist/
+release/
+release_tmp/
+build-manual/
+.gradle/
+tsconfig.tsbuildinfo
+
+# Generated: web UI bundled into the APK by build-manual.sh
+ourdrop/android/src-project/app/src/main/assets/web/
+
+# Binaries & installers
+*.exe
+*.apk
+*.idsig
+*.deb
+*.zip
+*.part
+
+# Signing material — NEVER commit
+*.keystore
+*.jks
+keystore-password.txt
+ourdrop-signing/
+
+# Local app state & machine-specific files
+ourdrop-settings.json
+.ourdrop-data/
+OurDrop Files/
+updates/
+local.properties
+*.log
