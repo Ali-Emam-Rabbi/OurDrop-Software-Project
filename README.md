@@ -208,7 +208,7 @@ npm run app      # build + launch the Electron app
 <tr>
 <td width="50%" align="center">
 
-<img src="https://raw.githubusercontent.com/Sadhin404/Projects/main/Zynox%20Download%20Manager/Mobile%20Version/app/src/main/res/drawable-nodpi/dev_m2.jpg" width="130" alt="Ali Emam Rabbi"/>
+<img src="https://drive.google.com/uc?export=view&id=1ndDv-gL0XQWvSudAkAuHCBXbL6bURfNh" width="130" alt="Ali Emam Rabbi"/>
 <br/><br/><b>Ali Emam Rabbi</b>
 <br/>B.Sc. in Computer Science &amp; Engineering
 <br/>First Capital University of Bangladesh
