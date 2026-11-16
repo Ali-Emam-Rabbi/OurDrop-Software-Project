@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <ImageView
+        android:id="@+id/waveB"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wave_b"
+        android:alpha="0.7" />
+
+    <ImageView
+        android:id="@+id/waveA"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wave_a"
+        android:alpha="0.8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="190dp"
+            android:layout_height="190dp">
+            <View
+                android:id="@+id/splashGlow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_glow"
+                android:alpha="0" />
+            <ImageView
+                android:id="@+id/splashLogo"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_splash"
+                android:alpha="0" />
+        </FrameLayout>
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/splashName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="OURDROP"
+            android:letterSpacing="0.16"
+            android:textColor="#FFFFFF"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:alpha="0" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/splashSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="PC ⇄ Mobile File Sharing"
+            android:textColor="#B9C8E2"
+            android:textSize="13sp"
+            android:alpha="0" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_gravity="top"
+        android:max="100"
+        android:visibility="gone" />
+
+    <!-- Branded connection overlay: shown instead of the default WebView
+         error page whenever the PC is unreachable. -->
+    <LinearLayout
+        android:id="@+id/connOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@drawable/btn_primary"
+            android:padding="18dp"
+            android:src="@drawable/ic_plane_white" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/connState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:textColor="#4ADE80"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/connTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Reconnecting to your PC…"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/connSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Trying to restore your connection automatically"
+            android:textColor="#93A3BD"
+            android:textSize="14sp" />
+
+        <ProgressBar
+            android:id="@+id/connSpinner"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="26dp"
+            android:indeterminateTint="#38BDF8" />
+
+        <Button android:fontFamily="@font/general_sans"
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/btn_primary"
+            android:paddingLeft="30dp"
+            android:paddingTop="12dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="12dp"
+            android:text="Try Again"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>

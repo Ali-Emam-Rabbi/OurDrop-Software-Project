@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- soft cyan outer glow -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#2638BDF8" />
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+    <!-- card body: deep-navy gradient + glowing cyan border -->
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:endColor="#050D1D"
+                android:startColor="#0C2145"
+                android:type="linear" />
+            <corners android:radius="28dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#38BDF8" />
+        </shape>
+    </item>
+    <!-- subtle blue waves along the bottom edge -->
+    <item
+        android:bottom="2dp"
+        android:drawable="@drawable/dialog_waves"
+        android:gravity="bottom"
+        android:left="2dp"
+        android:right="2dp" />
+</layer-list>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logo_splash" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:text="OurDrop"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="PC ⇄ Mobile File Sharing"
+            android:textColor="#B9C8E2"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView android:fontFamily="@font/general_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect to your PC"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView android:fontFamily="@font/general_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Open OurDrop on the PC, then scan its QR code — or type the address shown there."
+                android:textColor="#93A3BD"
+                android:textSize="13sp" />
+
+            <Button android:fontFamily="@font/general_sans"
+                android:id="@+id/btnScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/btn_primary"
+                android:drawableLeft="@drawable/ic_qr_white"
+                android:drawablePadding="10dp"
+                android:padding="13dp"
+                android:text="Scan QR code"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView android:fontFamily="@font/general_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="PC address"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText android:fontFamily="@font/general_sans"
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_bg"
+                android:hint="192.168.1.5:8765"
+                android:inputType="textUri"
+                android:padding="14dp"
+                android:singleLine="true"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#5B6B87" />
+
+            <Button android:fontFamily="@font/general_sans"
+                android:id="@+id/btnConnect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_ghost"
+                android:padding="12dp"
+                android:text="Connect"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView android:fontFamily="@font/general_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nearby PCs"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView android:fontFamily="@font/general_sans"
+                android:id="@+id/tvDiscovery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Searching this Wi-Fi for your PC…"
+                android:textColor="#93A3BD"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/discoveryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+
+        <Button android:fontFamily="@font/general_sans"
+            android:id="@+id/btnCancelFlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/btn_ghost"
+            android:padding="12dp"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:id="@+id/txtAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:padding="8dp"
+            android:text="About the Developers"
+            android:textColor="#7FB2F0"
+            android:textSize="13sp" />
+
+        <TextView android:fontFamily="@font/general_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="OurDrop v26"
+            android:textColor="#5B6B87"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>
