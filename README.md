@@ -135,7 +135,7 @@ Under the hood: the PC runs a small dependency-free Node.js server (HTTP + a han
 | 🪟 **Windows 10/11** | [**OurDrop-Setup-v60.exe**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-Setup-v60.exe) | Installer — Start Menu + Desktop shortcuts, starts in the tray |
 | 🤖 **Android 7.0+** | [**OurDrop-v60.apk**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60.apk) | Sideload — Android asks once to allow the install |
 | 🐧 **Linux (Debian/Ubuntu)** | [**OurDrop-v60-linux.deb**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60-linux.deb) | `sudo dpkg -i OurDrop-v60-linux.deb` |
-| 🗜️ **Windows (portable)** | [**OurDrop-PC-v60.zip**](https://drive.google.com/file/d/1iLi0OcjuSUruvTOPLIpiJbbDKf8yjV6L/view) | Unzip and run — no installation |
+| 🗜️ **Windows (portable)** | [**OurDrop-PC-v60.zip**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-PC-v60.zip) | Unzip and run — no installation |
 
 ## 📦 Versions
 
