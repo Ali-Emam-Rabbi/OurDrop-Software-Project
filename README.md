@@ -14,9 +14,9 @@
 
 <br/>
 
-<a href="https://drive.google.com/file/d/16tyVOfMBvR5JxyKPjvlb1nOr22al4CIe/view"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_WINDOWS-Setup_v60-0e7490?style=for-the-badge" alt="Download OurDrop Setup for Windows"/></a>
-<a href="https://drive.google.com/file/d/1n3a2kmhy0OUyNxGlfIJp2Z8Ko766yzNF/view"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_THE_ANDROID_APP-v60-3DDC84?style=for-the-badge" alt="Download OurDrop for Android"/></a>
-<a href="https://drive.google.com/file/d/1mSxiv5Fqnc8m-nQBz6gMJiudaX8nf__v/view"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_LINUX-.deb_v60-FCC624?style=for-the-badge" alt="Download OurDrop for Linux"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-Setup-v60.exe"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_WINDOWS-Setup_v60-0e7490?style=for-the-badge" alt="Download OurDrop Setup for Windows"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60.apk"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_THE_ANDROID_APP-v60-3DDC84?style=for-the-badge" alt="Download OurDrop for Android"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60-linux.deb"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_LINUX-.deb_v60-FCC624?style=for-the-badge" alt="Download OurDrop for Linux"/></a>
 
 **Send files of any type between your PC and your Android phone over your own Wi-Fi — no internet, no login, no cables, no cloud.**
 
@@ -132,9 +132,9 @@ Under the hood: the PC runs a small dependency-free Node.js server (HTTP + a han
 
 | Platform | File | Notes |
 |---|---|---|
-| 🪟 **Windows 10/11** | [**OurDrop-Setup-v60.exe**](https://drive.google.com/file/d/16tyVOfMBvR5JxyKPjvlb1nOr22al4CIe/view) | Installer — Start Menu + Desktop shortcuts, starts in the tray |
-| 🤖 **Android 7.0+** | [**OurDrop-v60.apk**](https://drive.google.com/file/d/1n3a2kmhy0OUyNxGlfIJp2Z8Ko766yzNF/view) | Sideload — Android asks once to allow the install |
-| 🐧 **Linux (Debian/Ubuntu)** | [**OurDrop-v60-linux.deb**](https://drive.google.com/file/d/1mSxiv5Fqnc8m-nQBz6gMJiudaX8nf__v/view) | `sudo dpkg -i OurDrop-v60-linux.deb` |
+| 🪟 **Windows 10/11** | [**OurDrop-Setup-v60.exe**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-Setup-v60.exe) | Installer — Start Menu + Desktop shortcuts, starts in the tray |
+| 🤖 **Android 7.0+** | [**OurDrop-v60.apk**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60.apk) | Sideload — Android asks once to allow the install |
+| 🐧 **Linux (Debian/Ubuntu)** | [**OurDrop-v60-linux.deb**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60-linux.deb) | `sudo dpkg -i OurDrop-v60-linux.deb` |
 | 🗜️ **Windows (portable)** | [**OurDrop-PC-v60.zip**](https://drive.google.com/file/d/1iLi0OcjuSUruvTOPLIpiJbbDKf8yjV6L/view) | Unzip and run — no installation |
 
 ## 📦 Versions
