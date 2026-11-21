@@ -202,6 +202,19 @@ npm run app      # build + launch the Electron app
 - The Android app is distributed as an APK, not through the Play Store.
 - An optional **pairing approval** for new devices exists in Settings; it is off by default.
 
+## 🔏 Code signing policy
+
+Free code signing provided by SignPath.io, certificate by SignPath Foundation.
+
+**Team roles**
+- Authors / Committers: Ali Emam Rabbi, Sadhin Khan
+- Reviewers: Ali Emam Rabbi, Sadhin Khan — every pull request is reviewed by a team member
+- Approvers: Ali Emam Rabbi — approves every signing request
+
+**Privacy policy:** This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. OurDrop transfers files only over your own Wi-Fi or hotspot — no file ever goes to a cloud server. When the app starts, it only downloads a small `version.json` file from GitHub to check for updates; no personal data is sent.
+
+**Uninstallation:** If you installed with the Windows Setup, uninstall from Settings / Control Panel like any other app; for the portable zip, just delete the folder.
+
 ## 👨‍💻 Developers
 
 <table width="100%">
