@@ -9,14 +9,15 @@
 ![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-.deb-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Version](https://img.shields.io/badge/Version-v60-0e7490?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v63-0e7490?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 <br/>
 
-<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-Setup-v60.exe"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_WINDOWS-Setup_v60-0e7490?style=for-the-badge" alt="Download OurDrop Setup for Windows"/></a>
-<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60.apk"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_THE_ANDROID_APP-v60-3DDC84?style=for-the-badge" alt="Download OurDrop for Android"/></a>
-<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60-linux.deb"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_LINUX-.deb_v60-FCC624?style=for-the-badge" alt="Download OurDrop for Linux"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-Setup-v63.exe"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_WINDOWS-Setup_v63-0e7490?style=for-the-badge" alt="Download OurDrop Setup for Windows"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-v63.apk"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_THE_ANDROID_APP-v63-3DDC84?style=for-the-badge" alt="Download OurDrop for Android"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-v63-linux.deb"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_DOWNLOAD_FOR_LINUX-.deb_v63-FCC624?style=for-the-badge" alt="Download OurDrop for Linux"/></a>
+<a href="https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-PC-v63.zip"><img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_PORTABLE_WINDOWS-ZIP_v63-64748b?style=for-the-badge" alt="Download OurDrop Portable for Windows"/></a>
 
 **Send files of any type between your PC and your Android phone over your own Wi-Fi — no internet, no login, no cables, no cloud.**
 
@@ -104,6 +105,20 @@ Starts with Windows into the system tray — ready before you ask, quiet until y
 </td>
 </tr>
 <tr>
+<td width="50%">
+
+📋 **Clipboard sync — PC ↔ phone**
+Copy text on one device and paste it on the other over the same Wi-Fi or hotspot — no internet or login required
+
+</td>
+<td width="50%">
+
+🗂️ **Clipboard history management**
+Delete individual clipboard items or clear the entire history from either device
+
+</td>
+</tr>
+<tr>
 <td colspan="2">
 
 🚫 **No login, no account, no internet** — everything runs on your local Wi-Fi, fully offline
@@ -111,6 +126,16 @@ Starts with Windows into the system tray — ready before you ask, quiet until y
 </td>
 </tr>
 </table>
+
+### 📋 Clipboard sync in v63
+
+Copy text on your PC and paste it on your phone, or copy text on your phone and paste it on your PC. Clipboard sync works over the same Wi-Fi network or hotspot, with no internet connection and no login required. Text sent from the phone to the PC first appears in the PC app’s **Clipboard** view. Your Windows clipboard is changed only when you press **Copy**.
+
+You can delete a single clipboard history item or clear the entire history from either device.
+
+### 🛠️ Fixed in v63
+
+- Fixed an issue where a file that had already been received on the phone could silently fail when sent again. Re-sending now works, including after changing the receive folder on the PC.
 
 ## 🧠 How it works
 
@@ -128,23 +153,23 @@ Files land in Downloads on the phone / the shared folder on the PC  ✓
 
 Under the hood: the PC runs a small dependency-free Node.js server (HTTP + a hand-rolled WebSocket for live progress). The phone is a native Android app whose WebView shows the same React UI the PC uses — bundled inside the APK, so it opens straight to the dashboard even before connecting.
 
-## ⬇️ Download — v60 (final)
+## ⬇️ Download — v63
 
 | Platform | File | Notes |
 |---|---|---|
-| 🪟 **Windows 10/11** | [**OurDrop-Setup-v60.exe**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-Setup-v60.exe) | Installer — Start Menu + Desktop shortcuts, starts in the tray |
-| 🤖 **Android 7.0+** | [**OurDrop-v60.apk**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60.apk) | Sideload — Android asks once to allow the install |
-| 🐧 **Linux (Debian/Ubuntu)** | [**OurDrop-v60-linux.deb**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-v60-linux.deb) | `sudo dpkg -i OurDrop-v60-linux.deb` |
-| 🗜️ **Windows (portable)** | [**OurDrop-PC-v60.zip**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v60/OurDrop-PC-v60.zip) | Unzip and run — no installation |
+| 🪟 **Windows 10/11** | [**OurDrop-Setup-v63.exe**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-Setup-v63.exe) | Installer — Start Menu + Desktop shortcuts, starts in the tray |
+| 🤖 **Android 7.0+** | [**OurDrop-v63.apk**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-v63.apk) | Sideload — Android asks once to allow the install |
+| 🐧 **Linux (Debian/Ubuntu)** | [**OurDrop-v63-linux.deb**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-v63-linux.deb) | `sudo dpkg -i OurDrop-v63-linux.deb` |
+| 🗜️ **Windows (portable)** | [**OurDrop-PC-v63.zip**](https://github.com/Ali-Emam-Rabbi/OurDrop-Software-Project/releases/download/v63/OurDrop-PC-v63.zip) | Unzip and run — no installation |
 
 ## 📦 Versions
 
 | Version | Status | Details |
 |---|---|---|
-| 📱 **Android** | ✅ **Final — v60** (60.0) | Native app + bundled web UI. Full source in [`ourdrop/android/`](ourdrop/android/) |
-| 🖥️ **PC** | ✅ **Final — v60.0.0** | Electron app, NSIS Setup + Linux .deb. Full source in [`ourdrop-app/`](ourdrop-app/) |
+| 📱 **Android** | ✅ **Current — v63** (63.0) | Native app + bundled web UI. Full source in [`ourdrop/android/`](ourdrop/android/) |
+| 🖥️ **PC** | ✅ **Current — v63.0.0** | Electron app, NSIS Setup + Linux .deb. Full source in [`ourdrop-app/`](ourdrop-app/) |
 
-OurDrop grew from a small Python prototype (v1) through a full React + Electron + native-Android rewrite (v9) to this final v60 — every version shaped by real on-device testing.
+OurDrop grew from a small Python prototype (v1) through a full React + Electron + native-Android rewrite (v9) to the current v63 — every version shaped by real on-device testing.
 
 ## 🗂 What's inside
 
@@ -169,7 +194,7 @@ OurDrop-Software-Project/
 └── README.md               · you are here
 ```
 
-> **A note on binary assets:** this Git repository holds the text source. Binary assets — the developer photos, the General Sans fonts, the app icons, the Android launcher/resource images and fonts, and the ZXing jar — travel with the **full source archive (`OurDrop-v60-Full-Source.zip`)** shared alongside the downloads above, because they cannot be stored in this repository. Everything else regenerates from what is here: `npm run build` rebuilds `dist/`, and `build-manual.sh` re-bundles the web UI into the APK.
+> **A note on binary assets:** this Git repository holds the text source. Binary assets — the developer photos, the General Sans fonts, the app icons, the Android launcher/resource images and fonts, and the ZXing jar — travel with the **full source archive (`full source archive`)** shared alongside the downloads above, because they cannot be stored in this repository. Everything else regenerates from what is here: `npm run build` rebuilds `dist/`, and `build-manual.sh` re-bundles the web UI into the APK.
 
 ## 🛠 Tech stack
 
